@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cas 2</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- <h1>Cas 2</h1> -->
+    <!-- 1.vjezba -->
+    <!-- <header>List generator from an array</header>
+    <ul id="nameList"></ul>
+    <button id="addNameBtn" onclick="addName()">Add</button>
+    <br /> -->
+    <!-- 2.vjezba -->
+    <!-- <h2>List Genetaror Dinamically from inputs</h2>
+    <div>
+      <form id="generateForm">
+        <label for="color">Color</label>
+        <input type="text" id="colorInput" /><br />
+        <label for="color">Fontsize</label>
+        <input type="text" id="fontSizeInput" /><br />
+        <label for="color">Items</label>
+        <input type="text" id="itemsInput" /><br />
+        <button id="genetateBtn" onclick="generateList(event)">Generate</button>
+      </form>
+    </div> -->
+    <!-- 3.vjezba -->
+    <!-- <form id="movieForm">
+      <label for="movie name">Enter movie title: </label>
+      <input type="text" id="movieInput" />
+      <br />
+      <button type="button" id="searchMovieBtn" onclick="searchMovie(event)">
+        Search
+      </button>
+    </form> -->
+    <!-- 4.vjezba -->
+    <table>
+      <tr>
+        <td><label for="noteTitle">Note Title:</label></td>
+        <td><input type="text" id="noteInput" required /></td>
+      </tr>
+      <tr>
+        <td><label for="priorityInput">Note Priority:</label></td>
+        <td>
+          <input
+            type="number"
+            id="priorityInput"
+            name="priority"
+            min="1"
+            max="10"
+            required
+          />
+        </td>
+      </tr>
+      <tr>
+        <td><label for="colorInput">Color:</label></td>
+        <td><input type="text" id="colorInput" required /></td>
+      </tr>
+      <tr>
+        <td><label for="noteDescription">Note Description:</label></td>
+        <td>
+          <textarea
+            id="noteContent"
+            name="noteContent"
+            rows="5"
+            cols="25"
+            required
+          ></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button
+            type="button"
+            id="addReminder"
+            onclick="createNoteObject(event)"
+          >
+            Save
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button
+            type="button"
+            id="showAllreminders"
+            onclick="displayReminders(event)"
+          >
+            Display All Reminders
+          </button>
+        </td>
+      </tr>
+    </table>
+
+    <script src="script.js"></script>
+  </body>
+</html>
