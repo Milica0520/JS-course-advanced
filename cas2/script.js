@@ -170,7 +170,7 @@ function searchMovie(event) {
 // The object should then be added to an array of reminders
 // When the button for showing all reminders is clicked it should show a table with title, priority, and description columns
 // The title should be the color of the "color" property
-const remindersArr = [];
+
 const noteTitleIn = document.getElementById("noteInput");
 const notePriorityIn = document.getElementById("priorityInput");
 const noteColorIn = document.getElementById("colorInput");
@@ -182,9 +182,10 @@ const Note = function (title, priority, color, description) {
   this.color = color;
   this.description = description;
 };
-
+const remindersArr = [];
 function createNoteObject(event) {
   event.preventDefault();
+
   const title = noteTitleIn.value;
   const priority = notePriorityIn.value;
   const color = noteColorIn.value;
@@ -192,7 +193,7 @@ function createNoteObject(event) {
 
   const newNote = new Note(title, priority, color, description);
   remindersArr.push(newNote);
-  console.log(remindersArr);
+  // console.log(remindersArr);
 }
 console.log(remindersArr);
 // When the button for showing all reminders is clicked it should show a table with title, priority, and description columns
