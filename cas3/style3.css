@@ -7,3 +7,7 @@ td {
   border: 1px solid black;
   padding: 8px;
 }
+img {
+  height: 200px;
+  width: auto;
+}

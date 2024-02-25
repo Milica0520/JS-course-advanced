@@ -117,6 +117,9 @@ fetch("http://api.open-notify.org/astros.json")
     console.error("Route has failed");
   });
 */
+
+///Exercise 2
+/*
 const starWarsBtn = document.getElementById("starWarsbtn");
 const h1 = document.getElementById("name");
 
@@ -157,3 +160,25 @@ starWarsBtn.addEventListener("click", function () {
       console.error("Route has failed");
     });
 });
+*/
+
+//Exercise 3
+
+const getImgDogBtn = document.getElementById("getDogBtn");
+getImgDogBtn.addEventListener("click", fetchImage);
+
+function fetchImage() {
+  fetch("https://dog.ceo/api/breeds/image/random")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (responce) {
+      const imgUrl = responce.message; // Dobivanje URL-a slike iz odgovora
+      const img = document.createElement("img");
+      img.src = imgUrl; // Postavljanje atributa src na URL slike
+      document.body.appendChild(img);
+    })
+    .catch(function (error) {
+      console.error("Error:", error.message);
+    });
+}
