@@ -119,7 +119,7 @@ fetch("http://api.open-notify.org/astros.json")
 */
 
 ///Exercise 2
-/*
+
 const starWarsBtn = document.getElementById("starWarsbtn");
 const h1 = document.getElementById("name");
 
@@ -160,10 +160,9 @@ starWarsBtn.addEventListener("click", function () {
       console.error("Route has failed");
     });
 });
-*/
 
 //Exercise 3
-
+/*
 const getImgDogBtn = document.getElementById("getDogBtn");
 getImgDogBtn.addEventListener("click", fetchImage);
 
@@ -182,3 +181,4 @@ function fetchImage() {
       console.error("Error:", error.message);
     });
 }
+*/
