@@ -175,6 +175,7 @@ const noteTitleIn = document.getElementById("noteInput");
 const notePriorityIn = document.getElementById("priorityInput");
 const noteColorIn = document.getElementById("colorInput");
 const noteDescriptionIn = document.getElementById("noteContent");
+const saveNoteBtn = document.getElementById("addReminder");
 
 const Note = function (title, priority, color, description) {
   this.title = title;
@@ -182,37 +183,71 @@ const Note = function (title, priority, color, description) {
   this.color = color;
   this.description = description;
 };
+
 const remindersArr = [];
-function createNoteObject(event) {
-  event.preventDefault();
 
-  const title = noteTitleIn.value;
-  const priority = notePriorityIn.value;
-  const color = noteColorIn.value;
-  const description = noteDescriptionIn.value;
+saveNoteBtn.addEventListener("click", createNoteObject);
+function createNoteObject() {
+  let validForm = true;
 
-  const newNote = new Note(title, priority, color, description);
-  remindersArr.push(newNote);
+  if (!noteTitleIn.value) {
+    console.log("Reminder title required!");
+    return false;
+  }
+  if (!notePriorityIn.value) {
+    console.log("Enter reminder priority!");
+    return false;
+  }
+  if (!noteColorIn.value) {
+    console.log("Color of your reminder!");
+    return false;
+  }
+  if (!noteDescriptionIn) {
+    console.log("Describe your reminder!");
+    return false;
+  }
+
+  if (validForm) {
+    const newNote = new Note(
+      noteTitleIn.value,
+      notePriorityIn.value,
+      noteColorIn.value,
+      noteDescriptionIn.value
+    );
+    remindersArr.push(newNote);
+  }
+  noteTitleIn.value = "";
+  notePriorityIn.value = "";
+  noteColorIn.value = "";
+  noteDescriptionIn.value = "";
   // console.log(remindersArr);
 }
-console.log(remindersArr);
-// When the button for showing all reminders is clicked it should show a table with title, priority, and description columns
-// The title should be the color of the "color" property
+// console.log(remindersArr);
 
-// const table = document.createElement("tr");
-// const currentNote = 0;
-// function displayReminders(event) {
-//   event.preventDefault();
+function showAllreminders(event) {
+  event.preventDefault();
+  // console.log(remindersArr);
 
-//   if (currentNote < remindersArr.length) {
-//     const row = document.createElement("tr");
-//     row.textContent = remindersArr[currentNote];
-//     table.appendChild(row);
-//     currentNote++;
-//   }
-// }
-// const table = document.createElement("tr"); //u njega treba da idu td
-// noteTitleIn.value = "";
-// notePriorityIn.value = "";
-// noteColorIn.value = "";
-// noteDescriptionIn.value = "";
+  const table = document.createElement("table");
+  const trHead = document.createElement("tr");
+
+  // console.log(remindersArr[0]);//one note
+
+  Object.keys(remindersArr[0]).forEach((key) => {
+    const th = document.createElement("th");
+    th.textContent = key;
+    trHead.appendChild(th);
+  });
+  table.appendChild(trHead);
+
+  remindersArr.forEach((noteEl) => {
+    const tr = document.createElement("tr");
+    Object.values(noteEl).forEach((value) => {
+      const td = document.createElement("td");
+      td.textContent = value;
+      tr.appendChild(td);
+    });
+    table.appendChild(tr);
+  });
+  document.body.appendChild(table);
+}
