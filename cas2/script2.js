@@ -220,9 +220,9 @@ function createNoteObject() {
   notePriorityIn.value = "";
   noteColorIn.value = "";
   noteDescriptionIn.value = "";
-  // console.log(remindersArr);
+  console.log(remindersArr);
 }
-// console.log(remindersArr);
+console.log(remindersArr);//ovaj konsol log se ucitava samo jednom
 
 function showAllreminders(event) {
   event.preventDefault();
