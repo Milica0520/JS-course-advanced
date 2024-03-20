@@ -1,17 +1,28 @@
 #pages .page {
-    display: none;
-    text-align: center;
+  display: none;
+  text-align: center;
 }
 
 #pages .page:first-child {
-    display: block;
+  display: block;
 }
 
 body {
-    background-image: url("img/background1.png");
-	background-repeat: repeat;
+  background-image: url("img/background1.png");
+  background-repeat: repeat;
 }
 
 .table {
-    background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th,
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
 }
