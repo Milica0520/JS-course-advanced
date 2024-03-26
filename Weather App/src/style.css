@@ -26,3 +26,10 @@ td {
   text-align: left;
   padding: 8px;
 }
+
+ul {
+  list-style: none;
+}
+#displayMaxMinTemp {
+  font-weight: bold;
+}
