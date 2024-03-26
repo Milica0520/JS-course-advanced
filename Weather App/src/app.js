@@ -1,5 +1,7 @@
 "use strict";
 import { getTemperature, getHumidity } from "./statistics.js";
+import { getHourlyData } from "./hourly.js";
+import { displayName } from "./about.js";
 //task 1
 const navLinks = document.querySelectorAll(".nav-link");
 const pageDivs = document.querySelectorAll(".page");
@@ -40,9 +42,10 @@ searchBtn.addEventListener("click", function (event) {
   getCityData(cityInput.value)
     .then((response) => {
       const dataList = response.list;
-
       getTemperature(dataList);
       getHumidity(dataList);
+      getHourlyData(dataList);
+      displayName();
     })
     .catch((error) => {
       console.log("Fetching country failed", error);

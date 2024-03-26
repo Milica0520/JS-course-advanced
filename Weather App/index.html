@@ -87,14 +87,28 @@
           Here you can read the hourly weather report for the following days.
           Keep in mind that it is not actually every hour, but every 3 - 5 hours
         </p>
-        <div class="table" id="tableResult"></div>
+        <div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Weather</th>
+                <th scope="col">Time</th>
+                <th scope="col">Temperature</th>
+                <th scope="col">Humidity</th>
+                <th scope="col">Windspeed</th>
+              </tr>
+            </thead>
+            <tbody id="tableResult"></tbody>
+          </table>
+        </div>
       </div>
       <div class="page">
         <h1>About WeatherAlert</h1>
         <p>
-          The application is built by an amazing developer named {YOUR NAME
-          HERE} and it is a project built to have some real world application
-          and meaning.
+          The application is built by an amazing developer named
+          <span id="devName"></span>
+          and it is a project built to have some real world application and
+          meaning.
         </p>
       </div>
     </div>
