@@ -17,7 +17,7 @@ function getTemperature(dataList) {
 <li>AVG TEMP: ${Math.round(avgTemp)} °C</li>
 <li>MAX TEMP: ${Math.round(tempMax)} °C</li>
 </ul>`;
-  //display date of max and min temperature
+  //temperature
   const displayMax = dataList
     .map((el) => {
       return { data: el.dt, max: el.main.temp_max, min: el.main.temp_min };
@@ -62,7 +62,7 @@ function getTemperature(dataList) {
 <li>Coldest time of the following period : ${dtMin} </li>
 </ul>`;
 }
-
+//humidity
 function getHumidity(dataList) {
   const humidDiv = document.getElementById("humidStatistics");
 

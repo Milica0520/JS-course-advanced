@@ -13,12 +13,12 @@ function getHourlyData(dataList) {
       })(),
       Weather: el.weather[0].description,
       Time: el.dt_txt,
-      Temperature: el.main.temp,
-      Humidity: el.main.humidity,
-      Windspeed: el.wind.speed,
+      Temperature: `${Math.round(el.main.temp)} °C `,
+      Humidity: `${el.main.humidity} %`,
+      Windspeed: `${el.wind.speed.toFixed(1)} m/s`,
     };
   });
-  // console.log(hourlyArr);
+
   const table = document.getElementById("tableResult");
 
   hourlyArr.forEach((el) => {
