@@ -217,3 +217,11 @@ student1.getFullName();
 student1.study();
 
 //configuracija
+
+function returnNum(num) {
+  return num;
+}
+
+const number = returnNum(3);
+
+console.log(number);
